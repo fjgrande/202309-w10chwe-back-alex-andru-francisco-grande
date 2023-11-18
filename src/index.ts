@@ -1,6 +1,6 @@
 import chalk from "chalk";
-import { connectToDatabase } from "./database";
-import { startServer } from "./server/app";
+import { connectToDatabase } from "./database/index.js";
+import { startServer } from "./server/app.js";
 
 const port = process.env.POR ?? 4000;
 
