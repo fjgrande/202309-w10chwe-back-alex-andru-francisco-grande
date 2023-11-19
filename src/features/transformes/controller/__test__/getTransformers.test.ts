@@ -1,4 +1,4 @@
-import transfomersMocks from "../../mocks/transformersMocks";
+import transformersMocks from "../../mocks/transformersMocks";
 import { type Request, type Response } from "express";
 import { type CustomResponse } from "../../../../types";
 import { type TransformerData, type TransformersRepository } from "../../types";
@@ -6,7 +6,7 @@ import TransformersController from "../transformersController";
 
 describe("Given a TransformersController's getTransformers method", () => {
   describe("When it receives a response", () => {
-    const transformers: TransformerData[] = transfomersMocks;
+    const transformers: TransformerData[] = transformersMocks;
 
     const transformersRepository: TransformersRepository = {
       getTransformers: jest.fn().mockResolvedValue(transformers),
