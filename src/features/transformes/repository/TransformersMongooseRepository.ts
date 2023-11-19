@@ -1,4 +1,4 @@
-import Transformer from "../models/Transformer";
+import Transformer from "../models/Transformer.js";
 import {
   type TransformersRepository,
   type TransformerStructure,
