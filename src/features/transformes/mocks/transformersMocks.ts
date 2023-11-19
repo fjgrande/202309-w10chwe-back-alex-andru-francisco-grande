@@ -1,4 +1,4 @@
-const transfomersMocks = [
+const transformersMocks = [
   {
     name: "Optimus Prime",
     faction: "Autobot",
@@ -17,4 +17,4 @@ const transfomersMocks = [
   },
 ];
 
-export default transfomersMocks;
+export default transformersMocks;
