@@ -1,11 +1,13 @@
 import morgan from "morgan";
 import app from "./app.js";
 import express from "express";
+import cors from "cors";
 import { notFound } from "./middlewares/errors/errorMiddleware.js";
 import pingRouter from "../features/ping/router/pingRouter.js";
 import transformersRouter from "../features/transformes/router/transformersRouter.js";
 
 app.use(morgan("dev"));
+app.use(cors({ origin: "*" }));
 
 app.use("/transformers", transformersRouter);
 app.use("/", pingRouter);
