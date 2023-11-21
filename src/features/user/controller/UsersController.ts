@@ -6,7 +6,10 @@ import type UserMongooRepository from "../repository/UserMongooseRepository.js";
 
 class UserController {
   constructor(private readonly userRepository: UserMongooRepository) {}
-  loginUser = async (req: UserCredentialsRequest, res: Response) => {
+  loginUser = async (
+    req: UserCredentialsRequest,
+    res: Response,
+  ): Promise<void> => {
     try {
       const { username, password } = req.body;
       const user = await this.userRepository.getUser(username, password);
