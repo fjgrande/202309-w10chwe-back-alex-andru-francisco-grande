@@ -27,7 +27,8 @@ describe("Given a GET /Transfomers endpoint", () => {
       const expectedStatusCode = 200;
       const path = "/transformers";
 
-      await Transformer.create(transformersMocks);
+      await Transformer.create(transformersMocks[0]);
+      await Transformer.create(transformersMocks[1]);
 
       const response = await request(app).get(path).expect(expectedStatusCode);
 
