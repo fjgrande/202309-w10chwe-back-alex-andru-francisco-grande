@@ -1,6 +1,5 @@
 import { type Response } from "express";
-import jwt from "jsonwebtoken";
-import { type JwtPayload } from "jsonwebtoken";
+import jwt, { type JwtPayload } from "jsonwebtoken";
 import { type UserCredentialsRequest } from "../types";
 import type UserMongooRepository from "../repository/UserMongooseRepository.js";
 
