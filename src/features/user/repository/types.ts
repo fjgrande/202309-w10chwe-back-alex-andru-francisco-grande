@@ -13,5 +13,5 @@ export interface UserCredentials {
 }
 
 export interface UsersMongooseRepositoryStructure {
-  getUsers: (username: string, password: string) => Promise<UserStructure>;
+  getUser: (username: string, password: string) => Promise<UserStructure>;
 }

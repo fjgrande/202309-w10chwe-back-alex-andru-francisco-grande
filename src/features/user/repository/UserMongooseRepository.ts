@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import User from "../models/user.js";
 import { type UserStructure } from "./types";
 
@@ -12,7 +13,7 @@ class UserMongooRepository {
     }
 
     const userPassword = await User.findOne({ password });
-    if (!userPassword) {
+    if (!userPassword || (await bcrypt.compare(password, user.password))) {
       throw new Error("Incorrect password");
     }
 
