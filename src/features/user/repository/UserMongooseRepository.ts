@@ -12,8 +12,7 @@ class UserMongooRepository {
       throw new Error("Username not found");
     }
 
-    const userPassword = await User.findOne({ password });
-    if (!userPassword || (await bcrypt.compare(password, user.password))) {
+    if (!(await bcrypt.compare(password, user.password))) {
       throw new Error("Incorrect password");
     }
 
