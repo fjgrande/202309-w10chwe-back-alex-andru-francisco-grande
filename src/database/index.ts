@@ -1,12 +1,15 @@
 import chalk from "chalk";
 import mongoose from "mongoose";
+import createDebug from "debug";
+
+const debug = createDebug("transformers:database");
 
 export const connectToDatabase = async (mongoUrl: string) => {
   try {
     await mongoose.connect(mongoUrl);
     mongoose.set("debug", true);
-    console.log(chalk.blue("Connected to database"));
+    debug(chalk.blue("Connected to database"));
   } catch (error) {
-    console.log(chalk.red("Falided connecting to database"));
+    debug(chalk.red("Failed connecting to database"));
   }
 };
